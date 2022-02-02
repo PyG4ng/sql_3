@@ -13,16 +13,16 @@ CREATE TABLE IF NOT EXISTS albums_artists (
     id SERIAL NOT NULL PRIMARY KEY,
     album_id INT REFERENCES albums(id),
     artist_id INT REFERENCES artists(id)
-)
+);
 
 CREATE TABLE IF NOT EXISTS genres (
     id SERIAL NOT NULL PRIMARY KEY,
-    genre_name VARCHAR(50) NOT NULL,
+    genre_name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS artists_genres (
     id SERIAL NOT NULL PRIMARY KEY,
-    artist_id INT REFERENCES artists(id)
+    artist_id INT REFERENCES artists(id),
     genre_id INT REFERENCES genres(id)
 );
 
